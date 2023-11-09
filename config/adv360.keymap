@@ -30,111 +30,9 @@
 
             require-prior-idle-ms = <175>;
         };
-        danish_ae: danish_ae {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DANISH_AE";
-            bindings = <&ae>, <&AE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        danish_oe: danish_oe {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DANISH_OE";
-            bindings = <&oe>, <&OE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        danish_aa: danish_aa {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DANISH_AA";
-            bindings = <&aa>, <&AA>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 
     macros {
-        AE: AE {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N8>,
-                <&macro_release>,
-                <&kp LALT>;
-
-            label = "AE";
-        };
-        ae: ae {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N0>,
-                <&macro_release>,
-                <&kp LALT>;
-
-            label = "AE";
-        };
-        aa: aa {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N1 &kp KP_N3 &kp KP_N4>,
-                <&macro_release>,
-                <&kp LALT>;
-
-            label = "AA";
-        };
-        AA: AA {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N1 &kp KP_N4 &kp KP_N3>,
-                <&macro_release>,
-                <&kp LALT>;
-
-            label = "AA";
-        };
-        oe: oe {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N8>,
-                <&macro_release>,
-                <&kp LALT>;
-
-            label = "OE";
-        };
-        OE: OE {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N6>,
-                <&macro_release>,
-                <&kp LALT>;
-
-            label = "OE";
-        };
     };
 
     keymap {
@@ -152,11 +50,11 @@
 
         layer_6 {
             bindings = <
-&kp ESC         &trans            &trans  &trans    &trans     &trans  &trans                                            &trans     &trans  &trans   &trans       &trans      &trans             &trans
-&kp GRAVE       &kp Q             &kp W   &kp F     &kp P      &kp B   &trans                                            &trans     &kp J   &kp L    &kp U        &kp Y       &kp SEMI           &trans
-&kp TAB         &hm LEFT_SHIFT A  &kp R   &kp S     &lt 2 T    &kp G   &tog 0    &trans   &trans      &trans  &trans     &trans     &kp M   &lt 4 N  &hm RCTRL E  &lt 5 I     &hm RIGHT_SHIFT O  &kp MINUS
-&kp LEFT_SHIFT  &kp Z             &kp X   &kp C     &kp D      &kp V                      &trans      &trans                        &kp K   &kp H    &kp COMMA    &kp DOT     &kp FSLH           &kp RSHFT
-&trans          &trans            &trans  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL  &trans      &trans  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN     &danish_ae  &danish_oe         &danish_aa
+&kp ESC         &trans            &trans  &trans    &trans     &trans  &trans                                            &trans     &trans  &trans   &trans       &trans   &trans             &trans
+&kp GRAVE       &kp Q             &kp W   &kp F     &kp P      &kp B   &trans                                            &trans     &kp J   &kp L    &kp U        &kp Y    &kp SEMI           &trans
+&kp TAB         &hm LEFT_SHIFT A  &kp R   &kp S     &lt 2 T    &kp G   &tog 0    &trans   &trans      &trans  &trans     &trans     &kp M   &lt 4 N  &hm RCTRL E  &lt 5 I  &hm RIGHT_SHIFT O  &kp MINUS
+&kp LEFT_SHIFT  &kp Z             &kp X   &kp C     &kp D      &kp V                      &trans      &trans                        &kp K   &kp H    &kp COMMA    &kp DOT  &kp FSLH           &kp RSHFT
+&trans          &trans            &trans  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL  &trans      &trans  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN     &none    &none              &none
             >;
         };
 
